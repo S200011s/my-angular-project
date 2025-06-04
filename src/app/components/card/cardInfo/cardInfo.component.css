@@ -1,0 +1,15 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  gap: 20px;
+  justify-content: center;
+  width: 98%;
+height: auto;
+}
+
+.liked-btn{
+  border: none;
+background-color: white;
+}

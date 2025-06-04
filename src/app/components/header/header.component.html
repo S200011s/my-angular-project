@@ -1,0 +1,48 @@
+<!-- <nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+      <img src="../../../assets/icons/notification.svg" alt="notification" id="not">
+      <button class="btn btn-outline-success" type="submit" (click)="formShown">+ Create a post</button>
+    </form>
+  </div>
+</nav> -->
+<!-- header.component.html -->
+<!-- <nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <form class="d-flex" role="search" (submit)="onCreatePostClick(); $event.preventDefault()">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+      <img src="../../../assets/icons/notification.svg" alt="notification" id="not">
+      <button class="btn btn-outline-success" type="submit">+ Create a post</button>
+    </form>
+  </div>
+</nav> -->
+
+<!-- ///////////////// -->
+<!-- header.component.html -->
+<!-- <nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+      <img src="../../../assets/icons/notification.svg" alt="notification" id="not">
+      <button class="btn btn-outline-success" type="button" (click)="onCreatePostClick()">
+        + Create a post
+      </button>
+    </form>
+  </div>
+</nav> -->
+
+<!-- ظظظظظظظ -->
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <form class="d-flex align-items-center justify-content-between w-100" role="search" (submit)="onCreatePostClick(); $event.preventDefault()">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+
+  <div class="d-flex align-items-center gap-3">
+    <img src="../../../assets/icons/notification.svg" alt="notification" id="not">
+    <button class="btn btn-outline-success" type="submit">+ Create a post</button>
+  </div>
+</form>
+
+  </div>
+</nav>

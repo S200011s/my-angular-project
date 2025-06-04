@@ -1,0 +1,14 @@
+<div class="container">
+<div class="card mb-4" style="max-width: 100%px; ">
+  <div class="card-header d-flex align-items-center">
+    <img [src]="posts?.userImage" class="rounded-circle me-2" width="40" height="40" alt="User">
+    <strong>{{posts?.userName}}</strong>
+    
+  </div>
+  <img [src]="posts?.postImage" class="card-img-top" alt="Post image">
+  <div class="card-body">
+    <p class="card-text"><strong>{{posts?.postDescription}}</strong> This is a caption with some text.</p>
+  <button class="liked-btn" (click)="onClick()">{{posts?.isLiked ?'❤️': '🤍'}}</button>
+  </div>
+</div>
+</div>

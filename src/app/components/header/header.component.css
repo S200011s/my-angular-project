@@ -1,0 +1,51 @@
+
+#not{
+  width: 20px;
+  height: 20px;
+}
+.btn-outline-success{
+  background: linear-gradient(to right, #FC690C,#E2116A );
+  width: 200px;
+  font-size: small;
+  color: white;
+  border-radius: 20px;
+  border: none;
+}
+.form-control{
+  width: 50%;
+  border-radius: 20px;
+}
+.d-flex{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#not {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.btn-outline-success {
+  background: linear-gradient(to right, #FC690C, #E2116A);
+  width: 200px;
+  font-size: small;
+  color: white;
+  border-radius: 20px;
+  border: none;
+}
+
+.form-control {
+  width: 50%;
+  border-radius: 20px;
+}
+
+.d-flex {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
