@@ -1,22 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { IPost } from './models/post.model';
+import { PostFormService } from './services/post-form.service';
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-   
-  formShown=false;
-  toggleForm() {
+export class AppComponent implements OnInit {
+
+  postService = inject(PostFormService);
+  posts$!: Observable<IPost[]>;
+
+  formShown = false;
+
+  ngOnInit(): void {
+    this.posts$ = this.postService.posts$;
+  }
+
+  toggleForm(): void {
     this.formShown = !this.formShown;
   }
-  onAddNewPost(newPost: IPost) {
-    const maxId = this.posts.length ? Math.max(...this.posts.map(p => p.id)) : 0;
-    newPost.id = maxId + 1;
 
-    this.posts.push(newPost);
-
+  hideForm(): void {
     this.formShown = false;
   }
-}
+
+  }
+

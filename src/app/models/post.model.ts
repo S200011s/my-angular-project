@@ -6,5 +6,6 @@ export interface IPost {
     isLiked: boolean;
     comment?:string;
     id:number;
+    createdAt: Date;
 }
 

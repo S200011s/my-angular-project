@@ -1,36 +1,39 @@
-<div class="container">
-  <h1 class="my-5 text-center">Create new post</h1>
-<form class="row g-3 align-items-center" [formGroup]="postForm">
-<div class="d-flex justify-content-center">
-  <label for="add" class="col-form-label">User Name</label>
-</div>
-<div class="w-100">
-  <input type="text" id="add" class="form-control" formControlName="userName" >
-</div>
+<div class="post-form-container card p-4 shadow-sm mb-4">
+  <h3 class="mb-3">Create New Post</h3>
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
 
+    <div class="mb-3">
+      <label for="userName" class="form-label">User Name</label>
+      <input type="text" id="userName" class="form-control" formControlName="userName">
+      <div *ngIf="postForm.get('userName')?.invalid && (postForm.get('userName')?.dirty || postForm.get('userName')?.touched)" class="text-danger mt-1">
+        <small *ngIf="postForm.get('userName')?.errors?.['required']">User name is required.</small>
+      </div>
+    </div>
 
-<div class="d-flex justify-content-center">
-  <label for="add" class="col-form-label">User Image</label>
-</div>
-<div class="w-100">
-  <input type="text" id="add" class="form-control" formControlName="userImage">
-</div>
+    <div class="mb-3">
+      <label for="userImage" class="form-label">User Image URL</label>
+      <input type="text" id="userImage" class="form-control" formControlName="userImage" placeholder="e.g., /assets/user_avatar.png">
+      <div *ngIf="postForm.get('userImage')?.invalid && (postForm.get('userImage')?.dirty || postForm.get('userImage')?.touched)" class="text-danger mt-1">
+        <small *ngIf="postForm.get('userImage')?.errors?.['required']">User image URL is required.</small>
+      </div>
+    </div>
 
-<div class="d-flex justify-content-center">
-  <label for="add" class="col-form-label">Post Description</label>
-</div>
-<div class="w-100">
-  <input type="text" id="add" class="form-control" formControlName="postDescription">
-</div>
+    <div class="mb-3">
+      <label for="postDescription" class="form-label">Description</label>
+      <textarea id="postDescription" class="form-control" formControlName="postDescription" rows="3"></textarea>
+      <div *ngIf="postForm.get('postDescription')?.invalid && (postForm.get('postDescription')?.dirty || postForm.get('postDescription')?.touched)" class="text-danger mt-1">
+        <small *ngIf="postForm.get('postDescription')?.errors?.['required']">Description is required.</small>
+      </div>
+    </div>
 
-<div class="d-flex justify-content-center">
-  <label for="add" class="col-form-label">Post Image</label>
+    <div class="mb-3">
+      <label for="postImage" class="form-label">Post Image URL</label>
+      <input type="text" id="postImage" class="form-control" formControlName="postImage" placeholder="e.g., /assets/post_image.jpg">
+      <div *ngIf="postForm.get('postImage')?.invalid && (postForm.get('postImage')?.dirty || postForm.get('postImage')?.touched)" class="text-danger mt-1">
+        <small *ngIf="postForm.get('postImage')?.errors?.['required']">Post image URL is required.</small>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="postForm.invalid">Submit Post</button>
+  </form>
 </div>
-<div class="w-100">
-  <input type="text" id="add" class="form-control" formControlName="postImage">
-</div>
-<button class="btn btn-success" (click)="onSumbit()">Add New Post</button>
-
-</form>
-
-
